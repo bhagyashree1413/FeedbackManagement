@@ -1,0 +1,16 @@
+﻿
+@model FeedbackManagement.Models.Feedback
+
+@{
+    ViewBag.Title = "Feedback Submitted";
+}
+
+<h2>Feedback Submitted Successfully!</h2>
+
+<p>Thank you for your feedback.</p>
+
+@Html.Partial("_FeedbackDetails", Model)
+
+<br />
+
+@Html.ActionLink("Submit Another Feedback", "Create")

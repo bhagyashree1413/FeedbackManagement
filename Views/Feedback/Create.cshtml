@@ -1,0 +1,36 @@
+﻿@model FeedbackManagement.Models.Feedback
+
+@{
+    ViewBag.Title = "Feedback Form";
+}
+
+<h2>Feedback Form</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <p>Name</p>
+    @Html.TextBoxFor(m => m.Name)
+    @Html.ValidationMessageFor(m => m.Name)
+
+    <p>Email</p>
+    @Html.TextBoxFor(m => m.Email)
+    @Html.ValidationMessageFor(m => m.Email)
+
+    <p>Rating (1 to 5)</p>
+    @Html.TextBoxFor(m => m.Rating)
+    @Html.ValidationMessageFor(m => m.Rating)
+
+    <p>Comments</p>
+    @Html.TextAreaFor(m => m.Comments)
+    @Html.ValidationMessageFor(m => m.Comments)
+
+    <br />
+    <br />
+    <input type="submit" value="Submit Feedback" />
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
